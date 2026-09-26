@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NAZMUL HAQUE — Life & Work Manager</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--text:#182230;--muted:#687386;--primary:#315efb;--primary2:#2447c8;--border:#e4e8f0;--danger:#d92d20;--ok:#079455;--shadow:0 8px 25px rgba(20,30,55,.07)}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Noto Sans Bengali,sans-serif;background:var(--bg);color:var(--text)}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.app{display:flex;min-height:100vh}.side{width:245px;background:#101828;color:white;padding:22px 14px;position:sticky;top:0;height:100vh}.brand{font-size:20px;font-weight:800;padding:8px 10px 22px}.brand small{display:block;font-size:11px;opacity:.55;font-weight:500;margin-top:4px}.nav button{display:block;width:100%;text-align:left;background:transparent;border:0;color:#d0d5dd;padding:12px 13px;border-radius:9px;margin:3px 0}.nav button.active,.nav button:hover{background:#1d2939;color:#fff}.main{flex:1;padding:22px;max-width:1500px;margin:auto;width:100%}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:20px}.title h1{margin:0;font-size:26px}.title p{margin:4px 0;color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--border);background:#fff;padding:9px 13px;border-radius:9px}.btn.primary{background:var(--primary);border-color:var(--primary);color:white}.btn.danger{color:var(--danger)}.grid{display:grid;gap:16px}.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow)}.metric{font-size:27px;font-weight:800;margin-top:7px}.label{font-size:13px;color:var(--muted)}.two{grid-template-columns:1.2fr .8fr}.three{grid-template-columns:repeat(3,1fr)}.section{display:none}.section.active{display:block}.card h3{margin:0 0 13px}.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.form .full{grid-column:1/-1}.form label{font-size:12px;color:var(--muted);display:block;margin-bottom:4px}.form input,.form select,.form textarea{width:100%;border:1px solid var(--border);border-radius:8px;padding:9px;background:#fff}.form textarea{min-height:80px;resize:vertical}.tablewrap{overflow:auto}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:10px 8px;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap;font-size:13px}.table th{color:var(--muted);font-weight:600}.empty{text-align:center;color:var(--muted);padding:22px}.pill{display:inline-block;padding:4px 8px;border-radius:20px;background:#eef4ff;color:#315efb;font-size:12px}.income{color:var(--ok);font-weight:700}.expense{color:var(--danger);font-weight:700}.statline{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)}.note{border:1px solid var(--border);padding:13px;border-radius:10px;margin-bottom:9px}.note strong{display:block;margin-bottom:4px}.muted{color:var(--muted)}.menuitem{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)}.check{display:flex;gap:9px;align-items:center}.check input{width:18px;height:18px}.footer{margin-top:20px;text-align:center;color:var(--muted);font-size:12px}.toast{position:fixed;right:20px;bottom:20px;background:#101828;color:white;padding:12px 16px;border-radius:9px;display:none;z-index:9}
+@media(max-width:900px){.side{width:72px;padding:14px 8px}.brand{font-size:0;text-align:center}.brand:before{content:"LW";font-size:20px}.brand small{display:none}.nav button{font-size:0;text-align:center}.nav button:before{font-size:20px}.nav button:nth-child(1):before{content:"⌂"}.nav button:nth-child(2):before{content:"▦"}.nav button:nth-child(3):before{content:"✓"}.nav button:nth-child(4):before{content:"▤"}.nav button:nth-child(5):before{content:"৳"}.nav button:nth-child(6):before{content:"◷"}.nav button:nth-child(7):before{content:"⚙"}.cards{grid-template-columns:repeat(2,1fr)}.two,.three{grid-template-columns:1fr}}
+@media(max-width:600px){.main{padding:13px}.cards{grid-template-columns:1fr 1fr}.top{align-items:flex-start}.title h1{font-size:21px}.form{grid-template-columns:1fr}.form .full{grid-column:auto}.side{width:58px}.actions .btn{padding:7px 9px}}
+</style>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#101828">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="NAZMUL HAQUE">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+<div class="app">
+<aside class="side"><div class="brand">NAZMUL HAQUE<small>Life & Work Manager</small></div>
+<nav class="nav">
+<button class="active" data-page="dashboard">Dashboard</button>
+<button data-page="duty">Duty Roster</button>
+<button data-page="tasks">Work Notes</button>
+<button data-page="food">Food Menu</button>
+<button data-page="money">Income & Expense</button>
+<button data-page="reports">Monthly Report</button>
+<button data-page="backup">Backup</button>
+</nav></aside>
+<main class="main">
+<div class="top"><div class="title"><h1 id="pageTitle">Dashboard</h1><p id="today"></p></div><div class="actions"><button class="btn" id="langBtn">বাংলা</button><button class="btn primary" onclick="showPage('backup')">Backup</button></div></div>
+
+<section id="dashboard" class="section active">
+<div class="grid cards">
+<div class="card"><div class="label">Today's Income / আজকের আয়</div><div class="metric" id="dIncome">৳0</div></div>
+<div class="card"><div class="label">Today's Expense / আজকের ব্যয়</div><div class="metric" id="dExpense">৳0</div></div>
+<div class="card"><div class="label">Balance / ব্যালেন্স</div><div class="metric" id="dBalance">৳0</div></div>
+<div class="card"><div class="label">Tasks / কাজ</div><div class="metric" id="dTasks">0/0</div></div>
+</div>
+<div class="grid two" style="margin-top:16px">
+<div class="card"><h3>Today's Plan / আজকের পরিকল্পনা</h3><div id="dashTasks"></div></div>
+<div class="card"><h3>Today's Duty / আজকের ডিউটি</h3><div id="dashDuty"></div></div>
+</div>
+</section>
+
+<section id="duty" class="section">
+<div class="card"><h3>Duty Roster / ডিউটি রোস্টার</h3>
+<form class="form" id="dutyForm"><div><label>Date / তারিখ</label><input type="date" id="dDate" required></div><div><label>Shift / শিফট</label><select id="dShift"><option>Morning / সকাল</option><option>Evening / বিকাল</option><option>Night / রাত</option><option>Off / ছুটি</option></select></div><div><label>Start / শুরু</label><input type="time" id="dStart"></div><div><label>End / শেষ</label><input type="time" id="dEnd"></div><div class="full"><label>Note / নোট</label><input id="dNote" placeholder="Extra duty, location..."></div><div class="full"><button class="btn primary">Add Duty / যোগ করুন</button></div></form>
+<div class="tablewrap" style="margin-top:18px"><table class="table"><thead><tr><th>Date</th><th>Shift</th><th>Time</th><th>Note</th><th></th></tr></thead><tbody id="dutyRows"></tbody></table></div></div></section>
+
+<section id="tasks" class="section"><div class="grid two">
+<div class="card"><h3>Add Work Note / কাজের নোট</h3><form class="form" id="taskForm"><div><label>Title / শিরোনাম</label><input id="tTitle" required></div><div><label>Date / তারিখ</label><input type="date" id="tDate" required></div><div class="full"><label>Details / বিস্তারিত</label><textarea id="tDetails"></textarea></div><div class="full"><button class="btn primary">Save Note / সংরক্ষণ</button></div></form></div>
+<div class="card"><h3>Tasks / কাজ</h3><div id="taskList"></div></div></div></section>
+
+<section id="food" class="section"><div class="grid two">
+<div class="card"><h3>Add Food Menu / খাবারের মেনু</h3><form class="form" id="foodForm"><div><label>Date / তারিখ</label><input type="date" id="fDate" required></div><div><label>Meal / বেলা</label><select id="fMeal"><option>Breakfast / নাশতা</option><option>Lunch / দুপুর</option><option>Dinner / রাত</option><option>Snack / নাস্তা</option></select></div><div class="full"><label>Menu / খাবার</label><input id="fMenu" required placeholder="Rice, fish, vegetables..."></div><div class="full"><button class="btn primary">Add Menu / যোগ করুন</button></div></form></div>
+<div class="card"><h3>Menu / মেনু</h3><div id="foodList"></div></div></div></section>
+
+<section id="money" class="section"><div class="grid two">
+<div class="card"><h3>Add Transaction / আয়-ব্যয় যোগ করুন</h3><form class="form" id="moneyForm"><div><label>Date / তারিখ</label><input type="date" id="mDate" required></div><div><label>Type / ধরন</label><select id="mType"><option value="income">Income / আয়</option><option value="expense">Expense / ব্যয়</option></select></div><div><label>Amount / টাকা</label><input type="number" min="0" step="0.01" id="mAmount" required></div><div><label>Category / খাত</label><input id="mCat" placeholder="Salary, Food, Travel..."></div><div class="full"><label>Note / নোট</label><input id="mNote"></div><div class="full"><button class="btn primary">Save / সংরক্ষণ</button></div></form></div>
+<div class="card"><h3>Transactions / লেনদেন</h3><div id="moneyList"></div></div></div></section>
+
+<section id="reports" class="section"><div class="grid cards"><div class="card"><div class="label">Monthly Income</div><div class="metric" id="rIncome">৳0</div></div><div class="card"><div class="label">Monthly Expense</div><div class="metric" id="rExpense">৳0</div></div><div class="card"><div class="label">Net Balance</div><div class="metric" id="rBalance">৳0</div></div><div class="card"><div class="label">Completed Tasks</div><div class="metric" id="rTasks">0</div></div></div><div class="card" style="margin-top:16px"><h3>Monthly Summary / মাসিক সারাংশ</h3><div id="reportDetail"></div></div></section>
+
+<section id="backup" class="section"><div class="grid two">
+<div class="card"><h3>Backup / ব্যাকআপ</h3><p class="muted">সব ডেটা একটি JSON ফাইলে ডাউনলোড করে রাখতে পারো।</p><button class="btn primary" id="exportBtn">Download Backup / ব্যাকআপ ডাউনলোড</button><hr style="border:0;border-top:1px solid var(--border);margin:18px 0"><label class="muted">Restore / পুরোনো ব্যাকআপ ফেরত আনুন</label><input type="file" id="importFile" accept=".json" style="margin-top:8px"><p class="muted">Restore করলে বর্তমান ডেটা প্রতিস্থাপিত হবে।</p></div>
+<div class="card"><h3>About / তথ্য</h3><p>এই অ্যাপটি সম্পূর্ণ client-side। কোনো server বা paid account দরকার নেই।</p><button class="btn danger" id="clearBtn">Clear All Data / সব মুছুন</button></div></div></section>
+<div class="footer">NAZMUL HAQUE • NAZMUL HAQUE • Offline • Your data stays on this device</div>
+</main></div><div class="toast" id="toast"></div>
+<script>
+const KEY='life_work_manager_v1';
+let data=JSON.parse(localStorage.getItem(KEY)||'{"duties":[],"tasks":[],"foods":[],"money":[]}');
+const $=id=>document.getElementById(id);
+const today=()=>new Date().toISOString().slice(0,10);
+const money=n=>'৳'+Number(n||0).toLocaleString('en-US',{maximumFractionDigits:2});
+function save(){localStorage.setItem(KEY,JSON.stringify(data));render();toast('Saved / সংরক্ষণ হয়েছে');}
+function toast(s){let x=$('toast');x.textContent=s;x.style.display='block';setTimeout(()=>x.style.display='none',1800)}
+function showPage(id){document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===id));$('pageTitle').textContent=document.querySelector(`[data-page="${id}"]`).textContent;render();}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
+$('today').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+['dDate','tDate','fDate','mDate'].forEach(id=>$(id).value=today());
+$('dutyForm').onsubmit=e=>{e.preventDefault();data.duties.push({id:Date.now(),date:$('dDate').value,shift:$('dShift').value,start:$('dStart').value,end:$('dEnd').value,note:$('dNote').value});e.target.reset();$('dDate').value=today();save()};
+$('taskForm').onsubmit=e=>{e.preventDefault();data.tasks.push({id:Date.now(),date:$('tDate').value,title:$('tTitle').value,details:$('tDetails').value,done:false});e.target.reset();$('tDate').value=today();save()};
+$('foodForm').onsubmit=e=>{e.preventDefault();data.foods.push({id:Date.now(),date:$('fDate').value,meal:$('fMeal').value,menu:$('fMenu').value});e.target.reset();$('fDate').value=today();save()};
+$('moneyForm').onsubmit=e=>{e.preventDefault();data.money.push({id:Date.now(),date:$('mDate').value,type:$('mType').value,amount:+$('mAmount').value,cat:$('mCat').value,note:$('mNote').value});e.target.reset();$('mDate').value=today();save()};
+function del(type,id){data[type]=data[type].filter(x=>x.id!==id);save()}
+function render(){
+let ti=data.money.filter(x=>x.date===today()&&x.type==='income').reduce((a,x)=>a+x.amount,0),te=data.money.filter(x=>x.date===today()&&x.type==='expense').reduce((a,x)=>a+x.amount,0);
+$('dIncome').textContent=money(ti);$('dExpense').textContent=money(te);$('dBalance').textContent=money(ti-te);
+let tt=data.tasks.filter(x=>x.date===today()),done=tt.filter(x=>x.done).length;$('dTasks').textContent=`${done}/${tt.length}`;
+$('dashTasks').innerHTML=tt.length?tt.map(x=>`<div class="check"><input type="checkbox" ${x.done?'checked':''} onchange="toggleTask(${x.id})"><span>${esc(x.title)}</span></div>`).join(''):'<div class="empty">No tasks / কোনো কাজ নেই</div>';
+let dd=data.duties.filter(x=>x.date===today());$('dashDuty').innerHTML=dd.length?dd.map(x=>`<div class="statline"><span>${esc(x.shift)}</span><b>${x.start||''}${x.end?' – '+x.end:''}</b></div>`).join(''):'<div class="empty">No duty / ডিউটি নেই</div>';
+$('dutyRows').innerHTML=data.duties.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(x=>`<tr><td>${x.date}</td><td><span class="pill">${esc(x.shift)}</span></td><td>${x.start||''} ${x.end?'– '+x.end:''}</td><td>${esc(x.note||'')}</td><td><button class="btn danger" onclick="del('duties',${x.id})">Delete</button></td></tr>`).join('')||'<tr><td colspan="5" class="empty">No records</td></tr>';
+$('taskList').innerHTML=data.tasks.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(x=>`<div class="note"><div class="check"><input type="checkbox" ${x.done?'checked':''} onchange="toggleTask(${x.id})"><strong>${esc(x.title)}</strong></div><small class="muted">${x.date}</small><div>${esc(x.details||'')}</div><button class="btn danger" onclick="del('tasks',${x.id})">Delete</button></div>`).join('')||'<div class="empty">No notes</div>';
+$('foodList').innerHTML=data.foods.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(x=>`<div class="menuitem"><span><b>${x.date}</b> · ${esc(x.meal)}<br>${esc(x.menu)}</span><button class="btn danger" onclick="del('foods',${x.id})">Delete</button></div>`).join('')||'<div class="empty">No menu</div>';
+$('moneyList').innerHTML=data.money.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(x=>`<div class="statline"><span><b>${x.date}</b> · ${esc(x.cat||'')}</span><span class="${x.type}">${x.type==='income'?'+':'-'}${money(x.amount)} <button class="btn danger" onclick="del('money',${x.id})">×</button></span></div>`).join('')||'<div class="empty">No transactions</div>';
+let ym=today().slice(0,7), mi=data.money.filter(x=>x.date.startsWith(ym)&&x.type==='income').reduce((a,x)=>a+x.amount,0),me=data.money.filter(x=>x.date.startsWith(ym)&&x.type==='expense').reduce((a,x)=>a+x.amount,0),mt=data.tasks.filter(x=>x.date.startsWith(ym)),md=mt.filter(x=>x.done).length;
+$('rIncome').textContent=money(mi);$('rExpense').textContent=money(me);$('rBalance').textContent=money(mi-me);$('rTasks').textContent=md;
+$('reportDetail').innerHTML=`<div class="statline"><span>Income / আয়</span><b class="income">${money(mi)}</b></div><div class="statline"><span>Expense / ব্যয়</span><b class="expense">${money(me)}</b></div><div class="statline"><span>Net / নিট</span><b>${money(mi-me)}</b></div><div class="statline"><span>Tasks / কাজ</span><b>${md} / ${mt.length} completed</b></div>`;
+}
+function toggleTask(id){let x=data.tasks.find(x=>x.id===id);if(x)x.done=!x.done;localStorage.setItem(KEY,JSON.stringify(data));render();}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+$('exportBtn').onclick=()=>{let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='life-work-backup-'+today()+'.json';a.click();URL.revokeObjectURL(a.href);toast('Backup downloaded');};
+$('importFile').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.duties||!x.tasks||!x.foods||!x.money)throw 0;data=x;save();toast('Restored / ফিরিয়ে আনা হয়েছে')}catch{alert('Invalid backup file / ভুল ফাইল')}};r.readAsText(f)};
+$('clearBtn').onclick=()=>{if(confirm('Delete all data? / সব ডেটা মুছে ফেলবেন?')){data={duties:[],tasks:[],foods:[],money:[]};save()}};
+let bn=false;$('langBtn').onclick=()=>{bn=!bn;$('langBtn').textContent=bn?'English':'বাংলা';toast(bn?'বাংলা + English mode':'বাংলা + English mode')};
+render();
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+}
+</script>
+</body></html>
